@@ -1,0 +1,22 @@
+.hero {
+  background-image: url("../../assets/img/bg-hero.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #ff5733;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #c70039;
+}

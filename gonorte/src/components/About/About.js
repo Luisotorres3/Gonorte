@@ -1,0 +1,48 @@
+import React from "react";
+import "./About.css";
+
+const About = () => {
+  return (
+    <section
+      className="wim bg-light pb-5 about"
+      id="about"
+      data-aos="fade-right"
+    >
+      <div class="container pt-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6" data-aos="fade-right">
+            <div class="section-heading text-center text-sm-center text-md-left mb-5">
+              <h2>Quién soy</h2>
+              <h1>Carmen Entrenadora</h1>
+            </div>
+            <p>
+              {" "}
+              Hola! Yo soy Carmen!
+              <p>Pero me conocereis como vuestra entrenadora personal.</p>
+              Trabajo como <spam>Personal Trainer</spam> especializada en
+              entrenamientos personalizados y en biomecánica.
+            </p>
+            <p>
+              Soy graduada en ..., licenciatura e bacharelado pela Universidad
+              de Granada.
+            </p>
+            <div class="col-12 text-center text-md-left p-0">
+              <a class="btn mt-4 mb-4" href="#">
+                Mi CV
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 ml-auto" data-aos="fade-left">
+            <img
+              class="img-fluid"
+              src={require("../../assets/img/perfil.jpg")}
+              alt="image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

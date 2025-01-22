@@ -1,0 +1,40 @@
+.services {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service {
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.service i {
+  font-size: 3rem;
+  color: #ff5733;
+  margin-bottom: 15px;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #666;
+}
