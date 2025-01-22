@@ -3,8 +3,8 @@ import "./Services.css";
 
 const Services = () => {
   return (
-    <section className="services" id="services" data-aos="fade-left">
-      <div className="container">
+    <section className="services" id="services">
+      <div className="container" data-aos="fade-left">
         <h2>Mis Servicios</h2>
         <div className="services-list">
           <div className="service">

@@ -27,27 +27,42 @@ const Header = () => {
             Gonorte.
           </a>
           <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="index.html" className="nav-link">
                 Inicio
               </a>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="#about" className="nav-link">
                 Sobre mí
               </a>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="#services" className="nav-link">
                 Servicios
               </a>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="#contact" className="nav-link">
                 Contacto
               </a>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="https://www.google.com/" className="nav-link">
                 <i className="fab fa-instagram"></i>
               </a>

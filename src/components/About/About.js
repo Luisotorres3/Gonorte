@@ -3,11 +3,7 @@ import "./About.css";
 
 const About = () => {
   return (
-    <section
-      className="wim bg-light pb-5 about"
-      id="about"
-      data-aos="fade-right"
-    >
+    <section className="wim bg-light pb-5 about" id="about">
       <div class="container pt-5">
         <div class="row align-items-center">
           <div class="col-12 col-md-6" data-aos="fade-right">
