@@ -11,6 +11,7 @@ import Contact from "./components/Contact/Contact";
 
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import Info from "./components/Info/Info";
 
 const App = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
       <Hero />
       <About />
       <Services />
+      <Info />
       <Contact />
       <Footer />
     </div>

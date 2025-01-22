@@ -9,18 +9,21 @@ const About = () => {
           <div class="col-12 col-md-6" data-aos="fade-right">
             <div class="section-heading text-center text-sm-center text-md-left mb-5">
               <h2>Quién soy</h2>
-              <h1>Carmen Entrenadora</h1>
+              <h1>CARMEN M. GONZÁLEZ</h1>
             </div>
+            <p> Especialista en Biomecánica Deportiva</p>
             <p>
-              {" "}
-              Hola! Yo soy Carmen!
-              <p>Pero me conocereis como vuestra entrenadora personal.</p>
-              Trabajo como <spam>Personal Trainer</spam> especializada en
-              entrenamientos personalizados y en biomecánica.
-            </p>
-            <p>
-              Soy graduada en ..., licenciatura e bacharelado pela Universidad
-              de Granada.
+              Soy una profesional recientemente graduada en el Master de
+              Tecnologia Humana en el Deporte y la Medicina, por la prestigiosa
+              Universidad Deportiva Alemana de Colonia. Mi sólida formación en
+              entrenamiento y rendimiento Deportivo, me brindan un enfoque
+              interdisciplinario para integrar elementos de mecánica, anatomía y
+              fisiología durante el entrenamiento. Mi experiencia como asistente
+              de investigación en el ámbito del boxeo profesional durante más de
+              un año me ha permitido desarrollar una profunda comprensión del
+              análisis del movimiento humano desde una perspectiva biomecánica
+              para enfocarme en la optimización del rendimiento deportivo y la
+              prevención de lesiones.
             </p>
             <div class="col-12 text-center text-md-left p-0">
               <a class="btn mt-4 mb-4" href="#">
@@ -28,11 +31,11 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div class="col-12 col-md-5 ml-auto" data-aos="fade-left">
+          <div class="col-12 col-md-5 ml-auto" data-aos="flip-left">
             <img
               class="img-fluid"
               src={require("../../assets/img/perfil.jpg")}
-              alt="image"
+              alt="imagen perfil"
             />
           </div>
         </div>

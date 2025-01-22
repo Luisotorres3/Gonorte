@@ -3,10 +3,10 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero-content flex" data-aos="fade-down">
-        <h1>Transforma tu vida con un entrenador personal</h1>
-        <p>Tu éxito comienza aquí.</p>
+        <h1>Biopoweriza tu fuerza</h1>
+        <p>Conquista tu movimiento.</p>
         <a href="#about" className="btn btn-primary">
           Conocer más
         </a>

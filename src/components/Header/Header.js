@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,15 +26,15 @@ const Header = () => {
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
           </div>
-          <a href="index.html" className="nav-brand">
-            Gonorte.
+          <a href="/" className="nav-brand">
+            GONORTE
           </a>
           <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
             <li
               className="nav-item"
               onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
             >
-              <a href="index.html" className="nav-link">
+              <a href="#hero" className="nav-link">
                 Inicio
               </a>
             </li>
@@ -63,8 +66,44 @@ const Header = () => {
               className="nav-item"
               onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
             >
+              <a href="#objetivos" className="nav-link">
+                Objetivos
+              </a>
+            </li>
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
               <a href="https://www.google.com/" className="nav-link">
                 <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
+              <a
+                href="https://www.tiktok.com/@gonorte.biomechanics"
+                className="nav-link"
+              >
+                <i className="fab fa-tiktok">
+                  <FontAwesomeIcon icon={faTiktok} />
+                </i>
+              </a>
+            </li>
+            <li
+              className="nav-item"
+              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
+            >
+              <a
+                href="/Gonorte/docs/presentation.pdf"
+                target="_blank"
+                className="nav-link"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-tiktok">
+                  <FontAwesomeIcon icon={faBriefcase} />
+                </i>
               </a>
             </li>
           </ul>
