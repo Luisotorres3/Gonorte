@@ -10,17 +10,26 @@ const Services = () => {
           <div className="service">
             <i className="fas fa-dumbbell"></i>
             <h3>Entrenamiento Personalizado</h3>
-            <p>Planes adaptados a tus necesidades individuales.</p>
+            <p>
+              Planificación del entrenamiento y seguimiento semanal. Opción
+              presencial/online.
+            </p>
           </div>
           <div className="service">
             <i className="fas fa-heartbeat"></i>
-            <h3>Salud y Bienestar</h3>
-            <p>Enfoque integral en tu bienestar físico y mental.</p>
+            <h3> Recuperación ante una lesión</h3>
+            <p>
+              Propiocepción y movilización de la zona afectada adaptado a
+              necesidades individuales.
+            </p>
           </div>
           <div className="service">
             <i className="fas fa-apple-alt"></i>
-            <h3>Nutrición</h3>
-            <p>Asesoramiento nutricional para maximizar resultados.</p>
+            <h3>Nutrición deportiva</h3>
+            <p>
+              Aprender a comer y a cuidar tu metabolismo intestinal mediante
+              pautas personalizadas.
+            </p>
           </div>
         </div>
       </div>

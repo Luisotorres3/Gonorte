@@ -26,7 +26,7 @@ const Header = () => {
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
           </div>
-          <a href="/" className="nav-brand">
+          <a href="/Gonorte" className="nav-brand">
             GONORTE
           </a>
           <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
@@ -58,23 +58,19 @@ const Header = () => {
               className="nav-item"
               onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
             >
-              <a href="#contact" className="nav-link">
-                Contacto
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
               <a href="#objetivos" className="nav-link">
                 Objetivos
               </a>
             </li>
+
             <li
               className="nav-item"
               onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
             >
-              <a href="https://www.google.com/" className="nav-link">
+              <a
+                href="https://www.instagram.com/gonorte.biomechanics"
+                className="nav-link"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
@@ -96,14 +92,11 @@ const Header = () => {
               onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
             >
               <a
-                href="/Gonorte/docs/presentation.pdf"
+                href="https://www.facebook.com/profile.php?id=61572526556682"
                 target="_blank"
                 className="nav-link"
-                rel="noopener noreferrer"
               >
-                <i className="fab fa-tiktok">
-                  <FontAwesomeIcon icon={faBriefcase} />
-                </i>
+                <i class="fab fa-facebook-f"></i>
               </a>
             </li>
           </ul>

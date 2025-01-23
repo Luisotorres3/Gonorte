@@ -13,21 +13,16 @@ const About = () => {
             </div>
             <p> Especialista en Biomecánica Deportiva</p>
             <p>
-              Soy una profesional recientemente graduada en el Master de
-              Tecnologia Humana en el Deporte y la Medicina, por la prestigiosa
+              Soy una profesional recientemente graduada en el Máster de
+              Tecnología Humana en el Deporte y la Medicina, por la prestigiosa
               Universidad Deportiva Alemana de Colonia. Mi sólida formación en
               entrenamiento y rendimiento Deportivo, me brindan un enfoque
               interdisciplinario para integrar elementos de mecánica, anatomía y
-              fisiología durante el entrenamiento. Mi experiencia como asistente
-              de investigación en el ámbito del boxeo profesional durante más de
-              un año me ha permitido desarrollar una profunda comprensión del
-              análisis del movimiento humano desde una perspectiva biomecánica
-              para enfocarme en la optimización del rendimiento deportivo y la
-              prevención de lesiones.
+              fisiología durante el entrenamiento.
             </p>
-            <div class="col-12 text-center text-md-left p-0">
+            <div class="flex justify-center col-12 text-center text-md-left p-0">
               <a class="btn mt-4 mb-4" href="#">
-                Mi CV
+                Mi Portfolio
               </a>
             </div>
           </div>

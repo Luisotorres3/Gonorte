@@ -1,0 +1,133 @@
+.section {
+  padding: 40px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.container-large {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faqs_wrap {
+  margin-top: 20px;
+  display: flex;
+  grid-column-gap: 4.75rem;
+  grid-row-gap: 4.75rem;
+}
+
+.max-width-440 {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.text-size-medium {
+  font-size: 1rem;
+}
+
+.text-color-lightgrey {
+  color: #ccc;
+}
+
+.text-style-link {
+  color: var(--orange-color);
+  text-decoration: underline;
+}
+
+.text-style-link:hover {
+  color: var(--orange-color);
+  text-decoration: none;
+}
+
+.faqs_list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.faqs_item {
+  border-bottom: 1px solid rgba(48, 228, 151, 0.2);
+  margin-bottom: 10px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faqs_item.active {
+  border-color: var(--primary-color); /* Color para la pregunta activa */
+}
+
+.faqs_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faqs_head.active {
+  color: rgba(48, 228, 151, 1); /* Color del texto para la pregunta activa */
+}
+
+.icon-24 {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.icon-24.rotated {
+  transform: rotate(180deg);
+}
+
+.faqs_body {
+  overflow: hidden;
+  transition: height 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.margin-top-8 {
+  margin-top: 8px;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .faq-header {
+    font-size: 1rem; /* Reduce el tamaño del texto en pantallas medianas */
+    padding: 10px;
+  }
+
+  .faq-body {
+    padding: 0 10px; /* Reduce el espacio horizontal */
+  }
+  .faqs_wrap {
+    display: inline-block;
+  }
+  .faqs-centered {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-header {
+    font-size: 0.9rem; /* Texto más pequeño para pantallas pequeñas */
+    padding: 8px;
+  }
+
+  .faq-body {
+    padding: 0 8px; /* Ajusta aún más los márgenes */
+  }
+
+  .faq-item {
+    margin-bottom: 8px; /* Menos espacio entre las preguntas */
+  }
+  .faqs_wrap {
+    display: inline-block;
+  }
+  .faqs-centered {
+    display: flex;
+    justify-content: center;
+  }
+}

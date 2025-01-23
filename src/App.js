@@ -12,6 +12,9 @@ import Contact from "./components/Contact/Contact";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Info from "./components/Info/Info";
+import FAQs from "./components/Faqs/FAQs";
+import HeroVideo from "./components/Hero/HeroVideo";
+import AboutCareer from "./components/About/AboutCareer";
 
 const App = () => {
   useEffect(() => {
@@ -23,8 +26,10 @@ const App = () => {
       <Header />
       <Hero />
       <About />
+      <AboutCareer />
       <Services />
       <Info />
+      <FAQs />
       <Contact />
       <Footer />
     </div>

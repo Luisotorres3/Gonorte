@@ -8,7 +8,7 @@ const Hero = () => {
         <h1>Biopoweriza tu fuerza</h1>
         <p>Conquista tu movimiento.</p>
         <a href="#about" className="btn btn-primary">
-          Conocer más
+          Conóceme
         </a>
       </div>
     </section>
