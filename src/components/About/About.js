@@ -29,7 +29,7 @@ const About = () => {
           <div class="col-12 col-md-5 ml-auto" data-aos="flip-left">
             <img
               class="img-fluid"
-              src={require("../../assets/img/perfil.jpg")}
+              src={require("../../assets/img/perfil.webp")}
               alt="imagen perfil"
             />
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Services.css";
 
 const Services = () => {
@@ -11,8 +12,8 @@ const Services = () => {
             <i className="fas fa-dumbbell"></i>
             <h3>Entrenamiento Personalizado</h3>
             <p>
-              Planificación del entrenamiento y seguimiento semanal. Opción
-              presencial/online.
+              Planificación online del entrenamiento con seguimientos semanales
+              y consejos sobre alimentación.
             </p>
           </div>
           <div className="service">
@@ -25,12 +26,17 @@ const Services = () => {
           </div>
           <div className="service">
             <i className="fas fa-apple-alt"></i>
-            <h3>Nutrición deportiva</h3>
+            <h3>Mejora y Corrección Postural</h3>
             <p>
               Aprender a comer y a cuidar tu metabolismo intestinal mediante
               pautas personalizadas.
             </p>
           </div>
+        </div>
+        <div>
+          <Link to="/planes" className="btn">
+            Vamos a ello!
+          </Link>
         </div>
       </div>
     </section>

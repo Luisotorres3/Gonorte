@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy GitHub Pages
 
 on:
   push:
     branches:
-      - gh-pages # Se activará cuando haya un push a gh-pages
+      - main # Cambia esto si usas otra rama para GitHub Pages
 
 permissions:
   contents: read
@@ -21,10 +21,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Build site
+        run: |
+          echo "Building site..."
+          # Si usas React/Vite/Vue, añade el build necesario
+          # npm install && npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: . # Asegúrate de que la carpeta correcta se suba
+          path: . # Asegúrate de que aquí estén los archivos del sitio
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

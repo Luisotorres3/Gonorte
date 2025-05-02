@@ -1,0 +1,259 @@
+/* Header.css - Estilos exclusivos para el componente Header */
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 2000;
+}
+section {
+  scroll-margin-top: 3.5rem;
+}
+
+.nav {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  transition: height 0.5s ease;
+  z-index: 1250;
+}
+
+.nav a {
+  font-family: var(--secondary-font);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.nav .nav-brand {
+  color: var(--primary-color) !important;
+}
+
+.nav-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color) !important;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  position: absolute;
+  right: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1500;
+  color: #fff;
+}
+
+.fa-times {
+  display: none;
+}
+
+.open .fa-times {
+  display: block;
+}
+
+.open .fa-bars {
+  display: none;
+}
+
+.nav-list {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #101d2c;
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 650ms;
+  z-index: 1250;
+}
+
+.open .nav-list {
+  opacity: 1;
+  transform: scale(1);
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 2.2rem;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.nav i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: gray;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  flex-direction: column;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(5px);
+  padding: 0.4rem 0;
+}
+
+.nav-item.dropdown:hover .dropdown-content {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mostrar iconos en móvil */
+.nav-icons-mobile {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+.nav-icons-mobile svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Scroll activated styles */
+.scrolling-active {
+  background-color: #fff;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scrolling-active {
+  background-color: #fff;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scrolling-active .nav-brand {
+  color: #313131 !important;
+}
+
+.scrolling-active .nav-link {
+  color: black;
+}
+
+.scrolling-active .nav {
+  height: 3.5rem;
+}
+
+.scrolling-active .fa-bars {
+  color: #313131;
+}
+.scrolling-active .nav-brand,
+.scrolling-active .fa-bars,
+.scrolling-active .nav a,
+.scrolling-active .dropbtn {
+  color: #313131 !important;
+}
+
+.scrolling-active .nav {
+  height: 3.5rem;
+}
+
+/* Desktop menu */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-list {
+    position: initial;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    transform: none;
+    opacity: 1;
+    transition: none;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    position: relative;
+    padding: 0;
+    text-transform: unset;
+    margin-bottom: 0;
+  }
+
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 650ms;
+    background-color: var(--primary-color);
+  }
+
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+
+  .scrolling-active .nav a {
+    color: #313131 !important;
+  }
+  .scrolling-active .nav .dropbtn {
+    color: #313131 !important;
+  }
+}
+@media (max-width: 768px) {
+  .scrolling-active .nav-link {
+    color: white !important;
+  }
+}
+
+.linksNavOpen ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.linksNavOpen ul li {
+  list-style: none;
+}

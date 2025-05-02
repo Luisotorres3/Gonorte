@@ -8,7 +8,7 @@ const Info = () => {
       icon: "fas fa-dumbbell mb-3",
       title: "Aumento masa muscular",
       subtitle: "Fuerza & hipertrofia",
-      image: require("../../assets/img/aumento.jpg"),
+      image: require("../../assets/img/aumento.webp"),
       description: "Programa diseñado para ganar fuerza y masa muscular.",
       descriptionBack:
         "El proceso de envejecimiento lleva consigo la pérdida de masa muscular o sarcopenia. Además, el músculo es el mayor depósito de combustible de todo nuestro cuerpo. Si no lo ejercitas,  acaba por debilitarse, incluso si eres joven. MAS MUSCULO, MAS VIDA",
@@ -18,7 +18,7 @@ const Info = () => {
       icon: "fas fa-apple-alt mb-3",
       title: "Pérdida de grasa",
       subtitle: "Segura & progresiva",
-      image: require("../../assets/img/perdida.jpg"),
+      image: require("../../assets/img/perdida.webp"),
       description: "¡A través del balance energético de la calculadora!",
       descriptionBack:
         "Saber qué comes es muy importante... pero saber CUÁNTO comes es más aún. Te enseño a tener una mejor relación con la comida para sentirte mejor y estar más san@ no solo físicamente si no MENTALMENTE",
@@ -28,7 +28,7 @@ const Info = () => {
       icon: "fas fa-hammer mb-3",
       title: "Rehabilitación",
       subtitle: "Muscular & articular",
-      image: require("../../assets/img/rehabilitacion.jpg"),
+      image: require("../../assets/img/rehabilitacion.webp"),
       description:
         "Recupera el funcionamiento de tu organismo a través de la terapia del movimiento.",
       descriptionBack:
@@ -39,7 +39,7 @@ const Info = () => {
       icon: "fas fa-chart-line mb-3",
       title: "Aumentar rendimiento",
       subtitle: "Élite & no-élite",
-      image: require("../../assets/img/rendimiento.jpg"),
+      image: require("../../assets/img/rendimiento.webp"),
       description:
         "Optimización del rendimiento físico y técnico para los más disciplinados.",
       descriptionBack:

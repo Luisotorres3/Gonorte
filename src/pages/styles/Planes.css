@@ -1,0 +1,310 @@
+/* Planes.css */
+
+.planes-section {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  font-family: var(--secondary-font);
+  color: white;
+  box-sizing: border-box;
+}
+
+.planes-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.botones-planes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.botones-planes button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.botones-planes button.activo,
+.botones-planes button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.planes-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.plan-detalle {
+  background-color: #1e1e1e;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+/* Color de cada nivel */
+.plan-detalle.basico {
+  border-color: #30e497; /* verde */
+}
+
+.plan-detalle.medio {
+  border-color: #ffaa00; /* naranja */
+}
+
+.plan-detalle.pro {
+  border-color: #ff4f70; /* rojo-rosado */
+}
+
+/* Botón dentro de cada plan */
+.plan-detalle.basico .btn {
+  background-color: #30e497;
+}
+
+.plan-detalle.medio .btn {
+  background-color: #ffaa00;
+  color: black;
+}
+
+.plan-detalle.pro .btn {
+  background-color: #ff4f70;
+}
+
+/* Botón dentro de cada plan */
+.plan-detalle.basico h2,
+.plan-detalle.basico li::before {
+  color: #30e497;
+}
+
+.plan-detalle.medio h2,
+.plan-detalle.medio li::before {
+  color: #ffaa00;
+}
+
+.plan-detalle.pro h2,
+.plan-detalle.pro li::before {
+  color: #ff4f70;
+}
+
+/* Asegura contraste en hover si deseas */
+.plan-detalle .btn:hover {
+  opacity: 0.9;
+}
+
+.plan-detalle:hover {
+  transform: scale(1.03);
+}
+
+.precios {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.precio-anterior {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.precio-descuento {
+  color: #ffd700;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.plan-detalle h2 {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.beneficios li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #333;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.beneficios li::before {
+  content: "✔";
+}
+
+.registro {
+  display: flex;
+  justify-content: center;
+}
+
+.registro .btn {
+  padding: 0.6rem 1.5rem;
+  background-color: #ff9c33;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.registro .btn:hover {
+  background-color: #ffa94d;
+}
+
+.selector-suscripcion {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.selector-suscripcion button {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.selector-suscripcion .activo,
+.selector-suscripcion button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .planes-section {
+    padding: 1rem;
+    padding-top: 6rem;
+  }
+  .planes-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-detalle,
+  .selector-suscripcion {
+    width: 95%;
+    gap: 0;
+  }
+
+  .planes-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .botones-planes {
+    gap: 0.2rem;
+  }
+}
+
+/* IntroPlanes.css */
+
+.intro-planes {
+  color: white;
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.texto {
+  flex: 1 1 500px;
+}
+
+.texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  font-size: 1.1rem;
+  color: #cccccc;
+}
+
+.video {
+  flex: 1 1 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .texto,
+  .video {
+    flex: 1 1 auto;
+  }
+  .texto h1 {
+    font-size: 1.5rem;
+  }
+  .intro-planes {
+    padding: 0;
+    margin: 0;
+  }
+  .intro-content {
+    gap: 0;
+  }
+  .planes-header {
+    margin-top: 1rem;
+  }
+  .planes-header h1 {
+    font-size: 3rem;
+  }
+}

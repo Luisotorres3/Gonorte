@@ -1,13 +1,67 @@
-import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Links from "../Links/Links";
+import "./Header.css";
+
+const DropdownItem = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      clearTimeout(timeoutRef.current);
+      setShowDropdown(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      timeoutRef.current = setTimeout(() => {
+        setShowDropdown(false);
+      }, 4000);
+    }
+  };
+
+  if (isMobile) {
+    return (
+      <div className="linksNavOpen">
+        <Links />
+      </div>
+    );
+  }
+
+  return (
+    <li
+      className="nav-item dropdown"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="nav-link dropbtn">
+        Mis Redes <i className="fa fa-caret-down"></i>
+      </div>
+      {showDropdown && (
+        <div className="dropdown-content">
+          <Links />
+        </div>
+      )}
+    </li>
+  );
+};
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollingActive, setScrollingActive] = useState(false);
+  const navigate = useNavigate();
 
-  // Manejar evento de scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrollingActive(window.scrollY > 150);
@@ -19,6 +73,20 @@ const Header = () => {
     };
   }, []);
 
+  const handleNav = (id) => {
+    if (menuOpen) setMenuOpen(false);
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
+  const handleNavToPage = (ref) => {
+    if (menuOpen) setMenuOpen(false);
+    navigate(`/${ref}`);
+  };
+
   return (
     <header className={scrollingActive ? "scrolling-active" : ""}>
       <div className="container">
@@ -26,79 +94,26 @@ const Header = () => {
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
           </div>
-          <a href="/Gonorte" className="nav-brand">
+          <a href="/" className="nav-brand">
             GONORTE
           </a>
           <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a href="#hero" className="nav-link">
-                Inicio
-              </a>
+            <li className="nav-item" onClick={() => handleNav("hero")}>
+              <span className="nav-link">Inicio</span>
             </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a href="#about" className="nav-link">
-                Sobre mí
-              </a>
+            <li className="nav-item" onClick={() => handleNavToPage("planes")}>
+              <span className="nav-link">Planes</span>
             </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a href="#services" className="nav-link">
-                Servicios
-              </a>
+            <li className="nav-item" onClick={() => handleNav("objetivos")}>
+              <span className="nav-link">Objetivos</span>
             </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a href="#objetivos" className="nav-link">
-                Objetivos
-              </a>
+            <li className="nav-item" onClick={() => handleNav("services")}>
+              <span className="nav-link">Servicios</span>
             </li>
-
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a
-                href="https://www.instagram.com/gonorte.biomechanics"
-                className="nav-link"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
+            <li className="nav-item" onClick={() => handleNav("about")}>
+              <span className="nav-link">Sobre mí</span>
             </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a
-                href="https://www.tiktok.com/@gonorte.biomechanics"
-                className="nav-link"
-              >
-                <i className="fab fa-tiktok">
-                  <FontAwesomeIcon icon={faTiktok} />
-                </i>
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : {})}
-            >
-              <a
-                href="https://www.facebook.com/profile.php?id=61572526556682"
-                target="_blank"
-                className="nav-link"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
+            <DropdownItem />
           </ul>
         </nav>
       </div>
