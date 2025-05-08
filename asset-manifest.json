@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/Gonorte/static/css/main.ed91dee5.css",
-    "main.js": "/Gonorte/static/js/main.90131f54.js",
+    "main.css": "/Gonorte/static/css/main.8e7accc1.css",
+    "main.js": "/Gonorte/static/js/main.d4ae22a8.js",
     "static/media/video.mp4": "/Gonorte/static/media/video.e3679cd13c29bb29c5d1.mp4",
+    "static/media/footer_background.webp": "/Gonorte/static/media/footer_background.cca7d17b1c02052eaf2b.webp",
     "static/media/perfil.webp": "/Gonorte/static/media/perfil.ac8636cb233974c23cbd.webp",
     "static/media/rendimiento.webp": "/Gonorte/static/media/rendimiento.f1ca9729b13e022f1a55.webp",
     "static/media/aumento.webp": "/Gonorte/static/media/aumento.321745313498219b5b1d.webp",
@@ -11,11 +12,11 @@
     "static/media/rehabilitacion.webp": "/Gonorte/static/media/rehabilitacion.fc6258b930b218867e04.webp",
     "static/media/perdida.webp": "/Gonorte/static/media/perdida.abfb26da917211a25bf4.webp",
     "index.html": "/Gonorte/index.html",
-    "main.ed91dee5.css.map": "/Gonorte/static/css/main.ed91dee5.css.map",
-    "main.90131f54.js.map": "/Gonorte/static/js/main.90131f54.js.map"
+    "main.8e7accc1.css.map": "/Gonorte/static/css/main.8e7accc1.css.map",
+    "main.d4ae22a8.js.map": "/Gonorte/static/js/main.d4ae22a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed91dee5.css",
-    "static/js/main.90131f54.js"
+    "static/css/main.8e7accc1.css",
+    "static/js/main.d4ae22a8.js"
   ]
 }
