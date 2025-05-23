@@ -103,6 +103,9 @@ section {
   font-size: 2rem;
   color: var(--primary-color);
 }
+.active-link .nav-link {
+  border-bottom: 2px solid var(--primary-color);
+}
 
 /* Dropdown styles */
 .dropdown {
@@ -130,11 +133,59 @@ section {
   transform: translateY(5px);
   padding: 0.4rem 0;
 }
+.dropdown-content {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
+.dropdown-content.visible {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(5px);
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
 .nav-item.dropdown:hover .dropdown-content {
   display: flex;
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(5px);
+}
+
+/* Links dentro del dropdown */
+.dropdown-content ul {
+  padding: 0;
+  list-style: none;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dropdown-content ul li {
+  width: 5rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dropdown-content a svg {
+  color: var(--primary-color);
+  width: 3rem;
 }
 
 /* Mostrar iconos en móvil */

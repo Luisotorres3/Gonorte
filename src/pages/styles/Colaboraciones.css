@@ -1,0 +1,471 @@
+.colaboraciones-section {
+  position: relative;
+  background-image: url("../../assets/img/bg-hero.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem;
+  color: white;
+  overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colaboraciones-intro {
+  z-index: 2;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.colaboraciones-section h2,
+.colaboraciones-intro h1,
+.colaboraciones-intro h2 {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.colaboraciones-section h2::after,
+.colaboraciones-intro h1::after,
+.colaboraciones-intro h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scaleIn 0.5s ease forwards 0.5s;
+}
+
+.colaboraciones-intro p,
+.colaboraciones-intro ul {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  line-height: 1.8;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.colaboraciones-intro ul {
+  list-style: none;
+  padding: 0;
+}
+
+.colaboraciones-intro ul li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.5s ease forwards;
+}
+
+.colaboraciones-intro ul li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.colaboraciones-intro ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.colaboraciones-intro ul li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.colaboraciones-intro ul li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.colaboraciones-intro ul li:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.colaboraciones-intro ul li::before {
+  content: "•";
+  margin-right: 12px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.85)
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1s;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.carrusel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.carrusel-track {
+  display: flex;
+  width: calc(200%);
+  animation: scroll 30s linear infinite;
+}
+
+.carrusel-track:hover {
+  animation-play-state: paused;
+}
+
+.alumno-card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin: 0 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: black;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.alumno-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.alumno-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.alumno-card:hover img {
+  transform: scale(1.05);
+}
+
+.alumno-card p {
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.btn-colaborar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-colaborar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2dc495;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-colaborar:hover::before {
+  width: 100%;
+}
+
+.btn-colaborar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(45, 196, 149, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .colaboraciones-intro {
+    padding: 0 1rem;
+  }
+
+  .alumno-card {
+    width: 220px;
+  }
+
+  .alumno-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .colaboraciones-section {
+    padding: 4rem 1rem;
+  }
+
+  .colaboraciones-intro h1 {
+    font-size: 2rem;
+  }
+
+  .colaboraciones-intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .colaboraciones-intro p,
+  .colaboraciones-intro ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .alumno-card {
+    width: 180px;
+    margin: 0 1rem;
+  }
+
+  .alumno-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .colaboraciones-section {
+    padding: 3rem 1rem;
+  }
+
+  .colaboraciones-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .colaboraciones-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn-colaborar {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .alumno-card {
+    width: 150px;
+    margin: 0 0.8rem;
+  }
+
+  .alumno-card img {
+    height: 150px;
+  }
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.servicio-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.servicio-icono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.servicio-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.servicio-card p {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonio-content {
+  padding: 1.5rem;
+}
+
+.testimonio-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.testimonio-content .edad {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonio-content .logro {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(45, 196, 149, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.testimonio-content .testimonio-texto {
+  color: #333;
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Update responsive styles */
+@media (max-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .servicio-card {
+    padding: 1.5rem;
+  }
+
+  .servicio-icono {
+    font-size: 2rem;
+  }
+
+  .testimonio-content {
+    padding: 1rem;
+  }
+
+  .testimonio-content .testimonio-texto {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicio-card {
+    padding: 1.2rem;
+  }
+
+  .servicio-icono {
+    font-size: 1.8rem;
+  }
+
+  .testimonio-content {
+    padding: 0.8rem;
+  }
+
+  .testimonio-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .testimonio-content .logro {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

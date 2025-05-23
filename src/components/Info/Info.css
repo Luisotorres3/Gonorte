@@ -1,0 +1,481 @@
+.objectives-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1600px !important;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-heading h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.section-heading h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.objectives-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  margin: 0 auto;
+}
+
+.objectives-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.objectives-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.objectives-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.book-card {
+  position: relative;
+  height: 580px;
+  width: 320px;
+  flex: 0 0 320px;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid #4ecdc4;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card::after {
+  content: "+";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #4ecdc4;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 300;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover::after {
+  transform: rotate(90deg);
+}
+
+.book-card.active::after {
+  display: none;
+}
+
+.book-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.book-content {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.98) 100%
+  );
+}
+
+.book-content i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-content .title-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.book-content h4 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.book-content .image-container {
+  width: calc(100% + 3rem);
+  margin: 0 -1.5rem;
+  position: relative;
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.book-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.book-content p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  min-height: 4.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-pages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  overflow-y: auto;
+}
+
+.book-page {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.book-page h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.book-page h4::before {
+  content: "•";
+  margin-right: 8px;
+  color: var(--primary-color);
+  font-size: 1.4em;
+}
+
+.book-page p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.book-pages .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.book-pages .close-button:hover {
+  transform: rotate(90deg);
+  background: #333;
+}
+
+.book-pages .objectives-title {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+/* Active state */
+.book-card.active .book-cover {
+  transform: translateX(-100%);
+}
+
+.book-card.active .book-pages {
+  opacity: 1;
+  visibility: visible;
+}
+
+.book-card.active .book-page {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-card.active .book-page:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.book-card.active .book-page:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.book-card.active .book-page:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+/* Responsive design */
+@media (max-width: 1600px) {
+  .container {
+    max-width: 1400px !important;
+  }
+
+  .book-card {
+    width: 300px;
+    flex: 0 0 300px;
+    height: 560px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px !important;
+  }
+
+  .book-card {
+    width: 260px;
+    flex: 0 0 260px;
+  }
+
+  .objectives-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 98%;
+  }
+
+  .objectives-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .book-card {
+    width: calc(50% - 1rem);
+    flex: 0 0 calc(50% - 1rem);
+    max-width: 300px;
+    height: 540px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 300px;
+    height: 520px;
+  }
+
+  .book-content i {
+    font-size: 2rem;
+  }
+
+  .book-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .book-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .book-content img {
+    height: 140px;
+  }
+
+  .book-card::after {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .book-content .title-container {
+    min-height: 70px;
+  }
+
+  .book-content .image-container {
+    padding-top: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .objectives-section {
+    padding: 3rem 0;
+  }
+
+  .book-card {
+    height: 500px;
+  }
+
+  .book-content {
+    padding: 1.25rem;
+  }
+
+  .book-content .image-container {
+    width: calc(100% + 2.5rem);
+    margin: 0.5rem -1.25rem;
+  }
+
+  .book-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .book-content h4 {
+    font-size: 0.85rem;
+  }
+
+  .book-content p {
+    font-size: 0.85rem;
+  }
+
+  .book-pages {
+    padding: 1.25rem;
+  }
+
+  .book-content .title-container {
+    min-height: 60px;
+  }
+}
+
+/* Animations for page turning */
+@keyframes pageFlip {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Eliminar los diferentes colores de borde por card */
+.book-card:nth-child(1),
+.book-card:nth-child(2),
+.book-card:nth-child(3),
+.book-card:nth-child(4) {
+  border-color: #4ecdc4;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustar los colores del botón de cerrar según la card */
+.book-card:nth-child(1) .close-button {
+  background: #4ecdc4;
+}
+
+.book-card:nth-child(2) .close-button {
+  background: #4ecdc4;
+}
+
+.book-card:nth-child(3) .close-button {
+  background: #4ecdc4;
+}
+
+.book-card:nth-child(4) .close-button {
+  background: #4ecdc4;
+}
+
+/* Ajustar los colores del título de objetivos según la card */
+.book-card:nth-child(1) .objectives-title {
+  color: #4ecdc4;
+  border-bottom-color: #4ecdc4;
+}
+
+.book-card:nth-child(2) .objectives-title {
+  color: #4ecdc4;
+  border-bottom-color: #4ecdc4;
+}
+
+.book-card:nth-child(3) .objectives-title {
+  color: #4ecdc4;
+  border-bottom-color: #4ecdc4;
+}
+
+.book-card:nth-child(4) .objectives-title {
+  color: #4ecdc4;
+  border-bottom-color: #4ecdc4;
+}

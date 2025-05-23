@@ -1,0 +1,76 @@
+.footer {
+  background-image: url("../../assets/img/footer_background.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* ← esto activa el parallax */
+  color: white;
+  padding: 3rem 2rem 1rem;
+  font-family: var(--secondary-font);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* oscurecimiento */
+  z-index: -1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-block h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.footer-block a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-block a:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.footer-block p,
+.footer-block a[href^="tel"],
+.footer-block a[href^="mailto"] {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.footer-block .contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+.footer-content-wrapper {
+  position: relative;
+  z-index: 2;
+}

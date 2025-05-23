@@ -26,7 +26,7 @@ export default function Links() {
           target="_blank"
           className="nav-link"
         >
-          <i class="fab fa-facebook-f"></i>
+          <i className="fab fa-facebook-f"></i>
         </a>
       </li>
     </ul>
