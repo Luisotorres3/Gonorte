@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Gonorte/static/css/main.d77494cc.css",
-    "main.js": "/Gonorte/static/js/main.5ca96ff6.js",
+    "main.css": "/Gonorte/static/css/main.5d77f367.css",
+    "main.js": "/Gonorte/static/js/main.3eb03054.js",
     "static/media/video.mp4": "/Gonorte/static/media/video.e3679cd13c29bb29c5d1.mp4",
     "static/media/footer_background.webp": "/Gonorte/static/media/footer_background.cca7d17b1c02052eaf2b.webp",
     "static/media/perfil.webp": "/Gonorte/static/media/perfil.ac8636cb233974c23cbd.webp",
@@ -12,11 +12,11 @@
     "static/media/rehabilitacion.webp": "/Gonorte/static/media/rehabilitacion.fc6258b930b218867e04.webp",
     "static/media/perdida.webp": "/Gonorte/static/media/perdida.abfb26da917211a25bf4.webp",
     "index.html": "/Gonorte/index.html",
-    "main.d77494cc.css.map": "/Gonorte/static/css/main.d77494cc.css.map",
-    "main.5ca96ff6.js.map": "/Gonorte/static/js/main.5ca96ff6.js.map"
+    "main.5d77f367.css.map": "/Gonorte/static/css/main.5d77f367.css.map",
+    "main.3eb03054.js.map": "/Gonorte/static/js/main.3eb03054.js.map"
   },
   "entrypoints": [
-    "static/css/main.d77494cc.css",
-    "static/js/main.5ca96ff6.js"
+    "static/css/main.5d77f367.css",
+    "static/js/main.3eb03054.js"
   ]
 }
