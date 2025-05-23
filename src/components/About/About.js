@@ -28,7 +28,7 @@ const About = () => {
           </div>
           <div className="col-12 col-md-5 ml-auto" data-aos="flip-left">
             <img
-              className="img-fluid"
+              className="img-fluid about-profile-image"
               src={require("../../assets/img/perfil.webp")}
               alt="imagen perfil"
             />

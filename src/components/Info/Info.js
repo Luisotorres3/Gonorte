@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "./Info.css";
+
 const Info = () => {
-  const [flippedCards, setFlippedCards] = useState({}); // Guarda el estado de cada tarjeta (si está volteada)
+  const [activeCard, setActiveCard] = useState(null);
 
   const cards = [
     {
@@ -10,8 +12,23 @@ const Info = () => {
       subtitle: "Fuerza & hipertrofia",
       image: require("../../assets/img/aumento.webp"),
       description: "Programa diseñado para ganar fuerza y masa muscular.",
-      descriptionBack:
-        "El proceso de envejecimiento lleva consigo la pérdida de masa muscular o sarcopenia. Además, el músculo es el mayor depósito de combustible de todo nuestro cuerpo. Si no lo ejercitas,  acaba por debilitarse, incluso si eres joven. MAS MUSCULO, MAS VIDA",
+      chapters: [
+        {
+          title: "¿Por qué es importante?",
+          content:
+            "El proceso de envejecimiento lleva consigo la pérdida de masa muscular o sarcopenia. El músculo es el mayor depósito de combustible de nuestro cuerpo.",
+        },
+        {
+          title: "¿Qué conseguirás?",
+          content:
+            "Aumento de fuerza, mejor composición corporal y mayor calidad de vida.",
+        },
+        {
+          title: "Metodología",
+          content:
+            "Entrenamiento progresivo basado en evidencia científica y adaptado a tus necesidades.",
+        },
+      ],
     },
     {
       id: 2,
@@ -20,8 +37,23 @@ const Info = () => {
       subtitle: "Segura & progresiva",
       image: require("../../assets/img/perdida.webp"),
       description: "¡A través del balance energético de la calculadora!",
-      descriptionBack:
-        "Saber qué comes es muy importante... pero saber CUÁNTO comes es más aún. Te enseño a tener una mejor relación con la comida para sentirte mejor y estar más san@ no solo físicamente si no MENTALMENTE",
+      chapters: [
+        {
+          title: "Enfoque saludable",
+          content:
+            "Saber qué comes es importante, pero saber CUÁNTO comes es aún más crucial para tu éxito.",
+        },
+        {
+          title: "Salud mental",
+          content:
+            "Te enseño a tener una mejor relación con la comida para sentirte mejor física y mentalmente.",
+        },
+        {
+          title: "Resultados duraderos",
+          content:
+            "Aprenderás hábitos sostenibles que podrás mantener a largo plazo.",
+        },
+      ],
     },
     {
       id: 3,
@@ -31,8 +63,22 @@ const Info = () => {
       image: require("../../assets/img/rehabilitacion.webp"),
       description:
         "Recupera el funcionamiento de tu organismo a través de la terapia del movimiento.",
-      descriptionBack:
-        "Mi deber es ayudarte a restaurar el tejido roto, la articulación en sobre uso o cualquier otra patología que haya surgido de bien de malos hábitos o de un incidente, a su correcto funcionamiento, EN EL MENOR TIEMPO POSIBLE",
+      chapters: [
+        {
+          title: "Evaluación completa",
+          content:
+            "Análisis detallado de tu condición y necesidades específicas.",
+        },
+        {
+          title: "Plan personalizado",
+          content:
+            "Programa de rehabilitación adaptado a tu patología y objetivos.",
+        },
+        {
+          title: "Seguimiento continuo",
+          content: "Ajustes y modificaciones según tu progreso y recuperación.",
+        },
+      ],
     },
     {
       id: 4,
@@ -42,67 +88,80 @@ const Info = () => {
       image: require("../../assets/img/rendimiento.webp"),
       description:
         "Optimización del rendimiento físico y técnico para los más disciplinados.",
-      descriptionBack:
-        "El uso de tecnologías de última generación junto con mis destrezas en física, motor control y planificación del rendimiento serán claves para conseguir potenciar la capacidad que el atleta desee explotar. POTENCIA, FUERZA, RESISTENCIA...",
+      chapters: [
+        {
+          title: "Tecnología avanzada",
+          content:
+            "Uso de tecnologías de última generación para análisis y seguimiento.",
+        },
+        {
+          title: "Enfoque científico",
+          content:
+            "Aplicación de principios de física y control motor en tu entrenamiento.",
+        },
+        {
+          title: "Resultados medibles",
+          content:
+            "Seguimiento detallado de tu progreso y adaptación continua del programa.",
+        },
+      ],
     },
   ];
 
-  const handleFlip = (id) => {
-    setFlippedCards((prev) => ({
-      ...prev,
-      [id]: !prev[id], // Alterna el estado de la tarjeta (volteada o no)
-    }));
+  const handleCardClick = (id) => {
+    setActiveCard(activeCard === id ? null : id);
   };
+
   return (
     <section className="training bg-light" id="objetivos">
-      <div className="container pt-5">
-        <div className="row ">
-          <div className="col-12">
-            <div
-              className="section-heading text-center text-sm-center mb-5"
-              data-aos="fade-up"
-            >
-              <h2>Trabajo contigo tus </h2>
-              <h1>Objetivos</h1>
-            </div>
-          </div>
+      <div className="container">
+        <div className="section-heading text-center mb-5" data-aos="fade-up">
+          <h2>Trabajo contigo tus</h2>
+          <h1>Objetivos</h1>
         </div>
-      </div>
 
-      <div className="container-fluid pb-5">
-        <div className="row no-gutters">
+        <div className="objectives-grid">
           {cards.map((card) => (
             <div
               key={card.id}
-              className={`col-12 col-lg-3 col-md-6 p-2 `}
-              data-aos="zoom-in"
-              onClick={() => handleFlip(card.id)}
-              style={{ cursor: "pointer" }}
+              className={`book-card ${activeCard === card.id ? "active" : ""}`}
+              onClick={() => handleCardClick(card.id)}
             >
-              <div
-                className={`card-item shadow-sm  ${
-                  flippedCards[card.id] ? "flipped" : ""
-                }`}
-              >
-                <div className="block-classNamees card-front">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="img-fluid"
-                  />
-                  <div className="p-4">
-                    <i className={card.icon}></i>
+              <div className="book-cover">
+                <div className="book-content">
+                  <i className={card.icon}></i>
+                  <div className="title-container">
                     <h3>{card.title}</h3>
                     <h4>{card.subtitle}</h4>
-                    <p className="mt-4">{card.description}</p>
                   </div>
-                  <div></div>
-                </div>
-                <div className="card-back">
-                  <div className="card-inner">
-                    <h3>{card.descriptionBack}</h3>
+                  <div className="image-container">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="img-fluid"
+                    />
                   </div>
+                  <p>{card.description}</p>
                 </div>
+              </div>
+
+              <div className="book-pages">
+                <button
+                  className="close-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(card.id);
+                  }}
+                >
+                  ×
+                </button>
+                <h3 className="objectives-title">Objetivos del Programa</h3>
+                {card.chapters.map((chapter, index) => (
+                  <div key={index} className="book-page">
+                    <h4>{chapter.title}</h4>
+                    <p>{chapter.content}</p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
