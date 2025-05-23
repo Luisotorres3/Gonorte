@@ -4,10 +4,10 @@ import "./About.css";
 const AboutCareer = () => {
   return (
     <section className="wim bg-light pb-5 about" id="about">
-      <div class="container pt-5">
-        <div class="row align-items-center">
+      <div className="container pt-5">
+        <div className="row align-items-center">
           <div
-            class="col-12 col-md-5 mr-auto video-container-career"
+            className="col-12 col-md-5 mr-auto video-container-career"
             data-aos="flip-right"
           >
             <video
@@ -19,8 +19,8 @@ const AboutCareer = () => {
               className="video-element"
             />
           </div>
-          <div class="col-12 col-md-6" data-aos="fade-right">
-            <div class="section-heading text-center text-sm-center text-md-left mb-5">
+          <div className="col-12 col-md-6" data-aos="fade-right">
+            <div className="section-heading text-center text-sm-center text-md-left mb-5">
               <h2>MI CARRERA</h2>
               <h1>DEPORTIVA</h1>
             </div>

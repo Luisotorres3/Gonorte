@@ -1,0 +1,105 @@
+.contacto-section {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("../../assets/img/bg-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.contacto-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* oscurecimiento */
+  z-index: -1;
+}
+
+.contacto-overlay {
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.contacto-titulo {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contacto-descripcion {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.contacto-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contacto-form label {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Redes sociales */
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.redes-sociales a {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  transform: scale(1.2);
+}

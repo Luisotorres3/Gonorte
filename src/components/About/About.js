@@ -4,10 +4,10 @@ import "./About.css";
 const About = () => {
   return (
     <section className="wim bg-light pb-5 about" id="about">
-      <div class="container pt-5">
-        <div class="row align-items-center">
-          <div class="col-12 col-md-6" data-aos="fade-right">
-            <div class="section-heading text-center text-sm-center text-md-left mb-5">
+      <div className="container pt-5">
+        <div className="row align-items-center">
+          <div className="col-12 col-md-6" data-aos="fade-right">
+            <div className="section-heading text-center text-sm-center text-md-left mb-5">
               <h2>Quién soy</h2>
               <h1>CARMEN M. GONZÁLEZ</h1>
             </div>
@@ -20,15 +20,15 @@ const About = () => {
               interdisciplinario para integrar elementos de mecánica, anatomía y
               fisiología durante el entrenamiento.
             </p>
-            <div class="flex justify-center col-12 text-center text-md-left p-0">
-              <a class="btn mt-4 mb-4" href="#">
+            <div className="flex justify-center col-12 text-center text-md-left p-0">
+              <a className="btn mt-4 mb-4" href="#">
                 Mi Portfolio
               </a>
             </div>
           </div>
-          <div class="col-12 col-md-5 ml-auto" data-aos="flip-left">
+          <div className="col-12 col-md-5 ml-auto" data-aos="flip-left">
             <img
-              class="img-fluid"
+              className="img-fluid"
               src={require("../../assets/img/perfil.webp")}
               alt="imagen perfil"
             />
