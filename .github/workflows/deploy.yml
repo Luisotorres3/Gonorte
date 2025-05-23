@@ -21,16 +21,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Or a version appropriate for the project, e.g., 18.x or 20.x
+          cache: 'npm'
+
       - name: Build site
         run: |
+          echo "Setting up Node.js..."
+          npm install
           echo "Building site..."
-          # Si usas React/Vite/Vue, añade el build necesario
-          # npm install && npm run build
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: . # Asegúrate de que aquí estén los archivos del sitio
+          path: dist/ # Changed from . to dist/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

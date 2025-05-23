@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 
+/**
+ * @component Services
+ * @description This component displays a list of services offered, each with an icon, title, and description.
+ * It also includes a call-to-action button linking to the plans page.
+ */
 const Services = () => {
   return (
     <section className="services" id="services">

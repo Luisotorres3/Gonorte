@@ -1,0 +1,58 @@
+/* IntroPlanes.css */
+.intro-planes {
+  background-color: var(--black-color); /* Fondo oscuro para la sección */
+  color: var(--white-color); /* Texto blanco */
+  padding: 4rem 2rem; /* Espaciado generoso */
+  text-align: center;
+  margin-top: 100px;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column; /* Apila el texto y el video en móviles */
+  align-items: center;
+  gap: 2rem; /* Espacio entre el texto y el video */
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.intro-content .texto {
+  flex: 1; /* Permite que el texto ocupe el espacio disponible */
+  text-align: left; /* Alinea el texto a la izquierda en vista de escritorio */
+}
+
+.intro-content .texto h1 {
+  font-size: 2.5rem; /* Tamaño grande para el título */
+  margin-bottom: 1rem;
+  color: var(--primary-color); /* Color primario para el título */
+}
+
+.intro-content .texto p {
+  font-size: 1.1rem; /* Tamaño de fuente para el párrafo */
+  line-height: 1.6; /* Espaciado de línea */
+  margin-bottom: 2rem; /* Espacio antes del video */
+}
+
+.intro-content .video {
+  flex: 1; /* Permite que el video ocupe el espacio disponible */
+  width: 100%; /* Asegura que el contenedor del video ocupe todo el ancho */
+  max-width: 560px; /* Ancho máximo para el video */
+}
+
+.intro-content .video iframe {
+  width: 100%; /* Hace el iframe responsivo */
+  height: 315px; /* Altura estándar para videos 16:9 */
+  border-radius: 8px; /* Bordes redondeados para el iframe */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .intro-content {
+    flex-direction: row; /* Texto y video lado a lado en pantallas más grandes */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  .intro-content .texto {
+    text-align: left; /* Asegura alineación izquierda para el texto */
+  }
+}

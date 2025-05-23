@@ -1,158 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Planes.css";
+import { planesInfo } from "../data/plansData";
+import IntroPlanes from "../../components/Planes/IntroPlanes";
 
-const IntroPlanes = () => {
-  return (
-    <section className="intro-planes">
-      <div className="intro-content">
-        <div className="texto">
-          <h1>Sea cual sea tu nivel, tenemos un camino para ti</h1>
-          <p>
-            Contamos con tres niveles en función de tu experiencia y
-            conocimientos. Podrás empezar desde lo más básico y evolucionar tu
-            progreso al nivel de los mejores.
-          </p>
-        </div>
-        <div className="video">
-          <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/kFLtEsp3rWg"
-            title="¿Qué nivel elegir?"
-            frameBorder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const planesInfo = {
-  mensual: {
-    basico: {
-      nombre: "Nivel Basic",
-      descripcion:
-        "Método de iniciación estructurado con comunidad activa y soporte.",
-      beneficios: [
-        "3 entrenamientos/semana",
-        "Guía de alimentación general",
-        "Soporte vía email",
-      ],
-      precioAnterior: "30,25€",
-      precio: "25,20€/mes",
-    },
-    medio: {
-      nombre: "Nivel Pro",
-      descripcion:
-        "Rutinas personalizadas + seguimiento para objetivos avanzados.",
-      beneficios: [
-        "5 entrenamientos/semana",
-        "Nutrición personalizada",
-        "1 videollamada/mes",
-        "Soporte WhatsApp",
-      ],
-      precioAnterior: "71,39€",
-      precio: "59,48€/mes",
-    },
-    pro: {
-      nombre: "Nivel Elite",
-      descripcion:
-        "Entrenamiento completo para alto rendimiento + acceso exclusivo.",
-      beneficios: [
-        "Entrenamiento diario",
-        "Soporte 24/7",
-        "Contenido exclusivo",
-        "Asistencia 1:1",
-      ],
-      precioAnterior: "119,79€",
-      precio: "99,82€/mes",
-    },
-  },
-  semestral: {
-    basico: {
-      nombre: "Nivel Basic",
-      descripcion:
-        "Método de iniciación estructurado con comunidad activa y soporte.",
-      beneficios: [
-        "3 entrenamientos/semana",
-        "Guía de alimentación general",
-        "Soporte vía email",
-      ],
-      precioAnterior: "30,25€",
-      precio: "25,20€/mes",
-    },
-    medio: {
-      nombre: "Nivel Pro",
-      descripcion:
-        "Rutinas personalizadas + seguimiento para objetivos avanzados.",
-      beneficios: [
-        "5 entrenamientos/semana",
-        "Nutrición personalizada",
-        "1 videollamada/mes",
-        "Soporte WhatsApp",
-      ],
-      precioAnterior: "71,39€",
-      precio: "59,48€/mes",
-    },
-    pro: {
-      nombre: "Nivel Elite",
-      descripcion:
-        "Entrenamiento completo para alto rendimiento + acceso exclusivo.",
-      beneficios: [
-        "Entrenamiento diario",
-        "Soporte 24/7",
-        "Contenido exclusivo",
-        "Asistencia 1:1",
-      ],
-      precioAnterior: "119,79€",
-      precio: "99,82€/mes",
-    },
-  },
-  anual: {
-    basico: {
-      nombre: "Nivel Basic",
-      descripcion:
-        "Método de iniciación estructurado con comunidad activa y soporte.",
-      beneficios: [
-        "3 entrenamientos/semana",
-        "Guía de alimentación general",
-        "Soporte vía email",
-      ],
-      precioAnterior: "30,25€",
-      precio: "25,20€/mes",
-    },
-    medio: {
-      nombre: "Nivel Pro",
-      descripcion:
-        "Rutinas personalizadas + seguimiento para objetivos avanzados.",
-      beneficios: [
-        "5 entrenamientos/semana",
-        "Nutrición personalizada",
-        "1 videollamada/mes",
-        "Soporte WhatsApp",
-      ],
-      precioAnterior: "71,39€",
-      precio: "59,48€/mes",
-    },
-    pro: {
-      nombre: "Nivel Elite",
-      descripcion:
-        "Entrenamiento completo para alto rendimiento + acceso exclusivo.",
-      beneficios: [
-        "Entrenamiento diario",
-        "Soporte 24/7",
-        "Contenido exclusivo",
-        "Asistencia 1:1",
-      ],
-      precioAnterior: "119,79€",
-      precio: "99,82€/mes",
-    },
-  },
-};
-
+/**
+ * @component Planes
+ * @description This component is the main page for displaying training plans.
+ * It includes an introductory section (IntroPlanes), a subscription type selector (mensual, semestral, anual),
+ * and a grid displaying different plan levels (basico, medio, pro) based on the selected subscription type.
+ */
 const Planes = () => {
+  /**
+   * @state {string} suscripcion
+   * @description Holds the currently selected subscription type (e.g., 'mensual', 'semestral', 'anual').
+   * This state determines which set of plan details from `planesInfo` is displayed.
+   * Defaults to 'mensual'.
+   */
   const [suscripcion, setSuscripcion] = useState("mensual");
 
   const planesActuales = planesInfo[suscripcion];

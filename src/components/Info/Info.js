@@ -1,14 +1,42 @@
 import React, { useState } from "react";
+import './Info.css';
+import aumentoImg from '../../assets/img/aumento.webp';
+import perdidaImg from '../../assets/img/perdida.webp';
+import rehabilitacionImg from '../../assets/img/rehabilitacion.webp';
+import rendimientoImg from '../../assets/img/rendimiento.webp';
+
+/**
+ * @component Info
+ * @description This component displays a section with flippable cards, each representing a service or objective.
+ * Users can click on a card to reveal more information on its back.
+ */
 const Info = () => {
+  /**
+   * @state {Object.<number, boolean>} flippedCards
+   * @description An object that keeps track of the flipped state of each card.
+   * The keys are card IDs and values are booleans (true if flipped, false otherwise).
+   */
   const [flippedCards, setFlippedCards] = useState({}); // Guarda el estado de cada tarjeta (si está volteada)
 
+  /**
+   * @const {Array<object>} cards
+   * @description An array of objects, where each object represents a card to be displayed.
+   * Each card object has the following properties:
+   * @property {number} id - Unique identifier for the card.
+   * @property {string} icon - CSS class for the card's icon (e.g., Font Awesome).
+   * @property {string} title - The main title of the card.
+   * @property {string} subtitle - A subtitle providing more context.
+   * @property {string} image - Path to the image for the card's front, imported using `require`.
+   * @property {string} description - Short description displayed on the front of the card.
+   * @property {string} descriptionBack - Detailed description displayed on the back of the card.
+   */
   const cards = [
     {
       id: 1,
       icon: "fas fa-dumbbell mb-3",
       title: "Aumento masa muscular",
       subtitle: "Fuerza & hipertrofia",
-      image: require("../../assets/img/aumento.webp"),
+      image: aumentoImg,
       description: "Programa diseñado para ganar fuerza y masa muscular.",
       descriptionBack:
         "El proceso de envejecimiento lleva consigo la pérdida de masa muscular o sarcopenia. Además, el músculo es el mayor depósito de combustible de todo nuestro cuerpo. Si no lo ejercitas,  acaba por debilitarse, incluso si eres joven. MAS MUSCULO, MAS VIDA",
@@ -18,7 +46,7 @@ const Info = () => {
       icon: "fas fa-apple-alt mb-3",
       title: "Pérdida de grasa",
       subtitle: "Segura & progresiva",
-      image: require("../../assets/img/perdida.webp"),
+      image: perdidaImg,
       description: "¡A través del balance energético de la calculadora!",
       descriptionBack:
         "Saber qué comes es muy importante... pero saber CUÁNTO comes es más aún. Te enseño a tener una mejor relación con la comida para sentirte mejor y estar más san@ no solo físicamente si no MENTALMENTE",
@@ -28,7 +56,7 @@ const Info = () => {
       icon: "fas fa-hammer mb-3",
       title: "Rehabilitación",
       subtitle: "Muscular & articular",
-      image: require("../../assets/img/rehabilitacion.webp"),
+      image: rehabilitacionImg,
       description:
         "Recupera el funcionamiento de tu organismo a través de la terapia del movimiento.",
       descriptionBack:
@@ -39,7 +67,7 @@ const Info = () => {
       icon: "fas fa-chart-line mb-3",
       title: "Aumentar rendimiento",
       subtitle: "Élite & no-élite",
-      image: require("../../assets/img/rendimiento.webp"),
+      image: rendimientoImg,
       description:
         "Optimización del rendimiento físico y técnico para los más disciplinados.",
       descriptionBack:
@@ -53,6 +81,7 @@ const Info = () => {
       [id]: !prev[id], // Alterna el estado de la tarjeta (volteada o no)
     }));
   };
+
   return (
     <section className="training bg-light" id="objetivos">
       <div className="container pt-5">

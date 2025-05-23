@@ -1,7 +1,19 @@
 import React from "react";
 import "./Hero.css";
 
+/**
+ * @component InfoCard
+ * @description A reusable card component to display information with a title, description, and a link.
+ * @param {object} props The props for the component.
+ * @param {string} props.title The title of the card.
+ * @param {string} props.description The description content of the card.
+ * @param {string} props.link The URL for the link.
+ * @param {string} props.linkText The text for the link.
+ * @param {string} [props.titleVar] Potentially unused prop for title color variable.
+ * @param {string} [props.linkVar] Potentially unused prop for link color variable.
+ */
 const InfoCard = ({ title, description, link, linkText }) => {
+  // Note: titleVar and linkVar props are passed but not currently used in this component.
   return (
     <div className="info-card">
       <h3>{title}</h3>
@@ -15,6 +27,11 @@ const InfoCard = ({ title, description, link, linkText }) => {
   );
 };
 
+/**
+ * @component TwoColumns
+ * @description A component that displays two InfoCard components side-by-side.
+ * It's used within the Hero section to present different program options.
+ */
 const TwoColumns = () => {
   return (
     <div className="two-columns">
@@ -38,6 +55,11 @@ const TwoColumns = () => {
   );
 };
 
+/**
+ * @component Hero
+ * @description The main hero section of the page. It includes a headline,
+ * the TwoColumns component to display program options, and an embedded video.
+ */
 const Hero = () => {
   return (
     <section className="hero" id="hero">

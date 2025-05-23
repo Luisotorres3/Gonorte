@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import careerVideo from '../../assets/video/video.mp4';
 
 const AboutCareer = () => {
   return (
@@ -11,7 +12,7 @@ const AboutCareer = () => {
             data-aos="flip-right"
           >
             <video
-              src={require("../../assets/video/video.mp4")} // Ruta al video
+              src={careerVideo} // Ruta al video
               autoPlay
               loop
               muted

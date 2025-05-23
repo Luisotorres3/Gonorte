@@ -1,6 +1,12 @@
 import React from "react";
 import "./About.css";
+import perfilImg from '../../assets/img/perfil.webp';
 
+/**
+ * @component About
+ * @description This component displays the "About Me" section, including a personal introduction,
+ * qualifications, and a profile image. It also contains a link to a portfolio.
+ */
 const About = () => {
   return (
     <section className="wim bg-light pb-5 about" id="about">
@@ -21,6 +27,7 @@ const About = () => {
               fisiología durante el entrenamiento.
             </p>
             <div class="flex justify-center col-12 text-center text-md-left p-0">
+              {/* Note: The "Mi Portfolio" link currently has a placeholder href="#" */}
               <a class="btn mt-4 mb-4" href="#">
                 Mi Portfolio
               </a>
@@ -29,7 +36,7 @@ const About = () => {
           <div class="col-12 col-md-5 ml-auto" data-aos="flip-left">
             <img
               class="img-fluid"
-              src={require("../../assets/img/perfil.webp")}
+              src={perfilImg}
               alt="imagen perfil"
             />
           </div>

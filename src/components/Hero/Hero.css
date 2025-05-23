@@ -1,16 +1,38 @@
 .hero {
   background-image: url("../../assets/img/bg-hero.webp");
   background-size: cover;
-  height: 100%;
+  /* height: 100%; */ /* Replaced by 100vh for full viewport height */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  position: relative; /* Added for ::before positioning */
+  width: 100%; /* Added for consistency */
+}
+
+/* Dark overlay for the hero section */
+.hero::before {
+  content: "";
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Ensure overlay is above background but below content */
 }
 
 .hero-content {
   margin-top: 6rem;
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2; /* Ensure content is above the overlay */
+  display: flex; /* Added from style.css .hero-content */
+  flex-direction: column; /* Added from style.css .hero-content */
+  align-items: center; /* Added from style.css .hero-content */
+  /* height: 100vh; */ /* This was causing issues with alignment, should be on .hero */
+  width: 100%; /* Ensure content can be centered */
 }
 
 .hero-video iframe {
